@@ -1,0 +1,19 @@
+model:
+  base_learning_rate: 0.00001
+  target: unidemoire.models.moire_blending.MoireBlending_Model
+  params:
+    model_name: UniDemoire
+    network_config:
+      init_blending_args:
+        bl_method_1: multiply
+        bl_method_1_op: 1.0
+        bl_method_2: grain_merge
+        bl_method_2_op: 0.8
+        bl_final_weight_min: 0.65
+        bl_final_weight_max: 0.75
+      blending_network_args:
+        depths: [1,1,1,1,1,1,1,1,1]
+        embed_dim: 16
+        win_size: 8
+        modulator: true
+        shift_flag: false
