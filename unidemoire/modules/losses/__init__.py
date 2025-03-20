@@ -1,0 +1,1 @@
+from unidemoire.modules.losses.contperceptual import LPIPSWithDiscriminator

@@ -1,0 +1,95 @@
+model:
+  base_learning_rate: 1.0e-4 # 5.0e-5   # set to target_lr by starting main.py with '--scale_lr False'
+  target: unidemoire.models.diffusion.ddpm.LatentDiffusion
+  params:
+    linear_start: 0.0015
+    linear_end: 0.0155
+    num_timesteps_cond: 1
+    log_every_t: 200
+    timesteps: 1000
+    loss_type: l1
+    first_stage_key: "image"
+    cond_stage_key: "image"
+    image_size: 24
+    channels: 64    
+    cond_stage_trainable: False
+    concat_mode: False
+    scale_by_std: True
+    monitor: 'val/loss_simple_ema'
+
+    scheduler_config: # 10000 warmup steps
+      target: unidemoire.lr_scheduler.LambdaLinearScheduler
+      params:
+        warm_up_steps: [10000]
+        cycle_lengths: [10000000000000]
+        f_start: [1.e-6]
+        f_max: [1.]
+        f_min: [ 1.]
+
+    unet_config:
+      target: unidemoire.modules.diffusionmodules.openaimodel.UNetModel
+      params:
+        image_size: 24
+        in_channels: 64
+        out_channels: 64
+        model_channels: 192
+        attention_resolutions: [1, 2, 4, 8]   
+        num_res_blocks: 2   
+        channel_mult: [1,2,2,4]
+        num_heads: 8
+        use_scale_shift_norm: True
+        resblock_updown: True
+
+    first_stage_config:
+      target: unidemoire.models.autoencoder.AutoencoderKL
+      params:
+        embed_dim: 64
+        monitor: "val/rec_loss"
+        ckpt_path: "models/moire_generator/autoencoder/last.ckpt" # 模型参数,last.ckpt 或 epoch=xxx.ckpt
+        ddconfig:
+          double_z: True
+          z_channels: 64
+          resolution: 768
+          in_channels: 3
+          out_ch: 3
+          wide_scale_resolution: False
+          ch: 64
+          ch_mult: [1,1,2,2,4,4]
+          num_res_blocks: 2
+          attn_resolutions: [16,8]
+          dropout: 0.0
+        
+        lossconfig:
+          target: torch.nn.Identity
+
+    cond_stage_config: "__is_unconditional__"
+
+data:
+  target: main.DataModuleFromConfig
+  params:
+    batch_size: 2
+    wrap: True
+    train:
+      target: unidemoire.data.moire.MoirePattern
+      params:
+        dataset_path: "/inspurfs/group/mayuexin/yangzemin/data/captured_data"
+        resolution: 768
+    validation:
+      target: unidemoire.data.moire.MoirePattern
+      params:
+        dataset_path: "/inspurfs/group/mayuexin/yangzemin/data/captured_data"
+        resolution: 768
+
+lightning:
+  callbacks:
+    image_logger:
+      target: main.ImageLogger
+      params:
+        batch_frequency: 1000
+        max_images: 8
+        increase_log_steps: False
+
+
+  trainer:
+    benchmark: True
+    # precision: 16
