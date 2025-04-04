@@ -43,10 +43,10 @@ data:
       params: 
         args:
           natural_dataset_name: TIP
-          uhdm_dataset_path: /inspurfs/group/mayuexin/yangzemin/data/uhdm_data/train
-          fhdmi_dataset_path: /inspurfs/group/mayuexin/yangzemin/data/fhdmi_data/train
-          tip_dataset_path: /storage/group/4dvlab/yangzm/tip2018/train
-          moire_pattern_path: /inspurfs/group/mayuexin/yangzemin/data/generated/fake_ready3
+          uhdm_dataset_path: # Please set the path to your moire pattern dataset
+          fhdmi_dataset_path: # Please set the path to your moire pattern dataset
+          tip_dataset_path: # Please set the path to your moire pattern dataset
+          moire_pattern_path: # Please set the path to your moire pattern dataset
           loader: crop
           crop_size: 256
         paired: True

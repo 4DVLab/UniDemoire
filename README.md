@@ -2,7 +2,7 @@
 
 <center><a href="https://yizhifengyeyzm.github.io/">Zemin Yang</a><sup>1</sup>, <a href="https://yujingsun.github.io/">Yujing Sun</a><sup>2</sup>, Xidong Peng<sup>1</sup>, <a href="https://www.cs.hku.hk/index.php/people/academic-staff/smyiu/">Siu Ming Yiu</a><sup>2</sup>, <a href="https://yuexinma.me/">Yuexin Ma</a><sup>1</sup></center>
 
-### [Project Page](https://yizhifengyeyzm.github.io/UniDemoire-page/) | [Paper](https://arxiv.org/abs/2502.06324) | Dataset 
+### [Project Page](https://yizhifengyeyzm.github.io/UniDemoire-page/) | [Paper](https://arxiv.org/abs/2502.06324) | [Dataset](https://pan.baidu.com/s/1YI4NO5xyC8oK3ZOFHpTa1w?pwd=sthx) 
 
 ***
 
@@ -43,8 +43,12 @@ pip install timm==0.9.16
 pip install pillow==9.5.0
 ```
 
-## 📦 Dataset
-(to be updated)
+## 📦 Dataset and Pre-trained Models
+
+We provide the captured 4K moiré pattern dataset, the sampled moiré pattern dataset, the MHRNID dataset, and the pre-trained models on both Moiré Pattern Generator and Moiré Image Synthesis stages, which can be downloaded through the following links:
+
+**\[[Baidu Drive](https://pan.baidu.com/s/1YI4NO5xyC8oK3ZOFHpTa1w?pwd=sthx)\]** | **\[Google Drive (To be uploaded)\]**
+
 
 ## 🚀 Getting Started
 

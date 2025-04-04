@@ -45,36 +45,36 @@ data:
       params: 
         args:
           natural_dataset_name: FHDMi
-          uhdm_dataset_path: /inspurfs/group/mayuexin/yangzemin/data/uhdm_data/train
-          fhdmi_dataset_path: /inspurfs/group/mayuexin/yangzemin/data/fhdmi_data/train
-          tip_dataset_path: /inspurfs/group/mayuexin/yangzemin/data/tip2018/train
-          moire_pattern_path: /inspurfs/group/mayuexin/yangzemin/data/generated/fake_ready5
+          uhdm_dataset_path: # Please set the path to your moire pattern dataset
+          fhdmi_dataset_path: # Please set the path to your moire pattern dataset
+          tip_dataset_path: # Please set the path to your moire pattern dataset
+          moire_pattern_path: # Please set the path to your moire pattern dataset
           loader: crop
           crop_size: 384
-        paired: True  # 是否用 paired 的 real-moire
+        paired: True
         mode: train
     
-    # test:   # UHDM 测试集
+    # test:   # UHDM
     #   target: demoire.data.uhdm.uhdm_datasets
     #   params:
     #     args:
-    #       dataset_path: /inspurfs/group/mayuexin/yangzemin/data/uhdm_data/test
+    #       dataset_path: # Please set the path to your moire pattern dataset
     #       LOADER: default
     #     mode: test
 
-    # test:   # FHDMi 测试集
+    # test:   # FHDMi
     #   target: demoire.data.fhdmi.fhdmi_datasets
     #   params:
     #     args:
-    #       dataset_path: /inspurfs/group/mayuexin/yangzemin/data/fhdmi_data/test
+    #       dataset_path: # Please set the path to your moire pattern dataset
     #       LOADER: default
     #     mode: test       
 
-    test:   # TIP 测试集
+    test:   # TIP
       target: demoire.data.tip.tip_datasets
       params:
         args:
-          dataset_path: /inspurfs/group/mayuexin/yangzemin/data/tip2018/test
+          dataset_path: # Please set the path to your moire pattern dataset
           LOADER: default
         mode: test      
 
@@ -84,11 +84,11 @@ lightning:
       target: main.ImageLogger
       params:
         increase_log_steps: False
-        rescale: False  # 去摩尔模型没有将数据从[0,1]转化到[-1, 1]!
-        batch_frequency: 500   # 每隔多少步调用一次 ImageLogger 来保存训练时的图片
+        rescale: False
+        batch_frequency: 500
         max_images: 8
 
   trainer:
     benchmark: True
     # accumulate_grad_batches: 1
-    max_epochs: 150     # 训练总 Epoch 数，练完之后自动开始 testing
+    max_epochs: 150

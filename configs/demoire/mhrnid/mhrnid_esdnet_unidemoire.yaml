@@ -45,11 +45,8 @@ data:
       params: 
         args:
           natural_dataset_name: MHRNID
-          # uhdm_dataset_path: /inspurfs/group/mayuexin/yangzemin/data/uhdm_data/train
-          # fhdmi_dataset_path: /inspurfs/group/mayuexin/yangzemin/data/fhdmi_data/train
-          # tip_dataset_path: /inspurfs/group/mayuexin/yangzemin/data/tip2018/train
-          mhrnid_dataset_path: /inspurfs/group/mayuexin/yangzemin/data/mhrnid
-          moire_pattern_path: /inspurfs/group/mayuexin/yangzemin/data/generated/fake_ready5
+          mhrnid_dataset_path: # Please set the path to your moire pattern dataset
+          moire_pattern_path: # Please set the path to your moire pattern dataset
           loader: crop
           crop_size: 384
         paired: True
@@ -59,7 +56,7 @@ data:
       target: unidemoire.data.uhdm.uhdm_datasets
       params:
         args:
-          dataset_path: /inspurfs/group/mayuexin/yangzemin/data/uhdm_data/test
+          dataset_path: # Please set the path to your moire pattern dataset
           LOADER: default
         mode: test
 
@@ -67,7 +64,7 @@ data:
     #   target: unidemoire.data.fhdmi.fhdmi_datasets
     #   params:
     #     args:
-    #       dataset_path: /inspurfs/group/mayuexin/yangzemin/data/fhdmi_data/test
+    #       dataset_path: # Please set the path to your moire pattern dataset
     #       LOADER: default
     #     mode: test       
   

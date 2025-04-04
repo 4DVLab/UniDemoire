@@ -32,7 +32,7 @@ data:
     train:
       target: unidemoire.data.moire.MoirePattern
       params:
-        dataset_path: "/inspurfs/group/mayuexin/yangzemin/data/captured_data"
+        dataset_path: "./data/captured_data"  # Please set the path to your moire pattern dataset
         resolution: 768
 
 lightning:

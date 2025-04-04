@@ -45,7 +45,7 @@ model:
       params:
         embed_dim: 64
         monitor: "val/rec_loss"
-        ckpt_path: "models/moire_generator/autoencoder/last.ckpt" # 模型参数,last.ckpt 或 epoch=xxx.ckpt
+        ckpt_path: "models/moire_generator/autoencoder/last.ckpt"
         ddconfig:
           double_z: True
           z_channels: 64
@@ -72,12 +72,12 @@ data:
     train:
       target: unidemoire.data.moire.MoirePattern
       params:
-        dataset_path: "/inspurfs/group/mayuexin/yangzemin/data/captured_data"
+        dataset_path: # Please set the path to your moire pattern dataset
         resolution: 768
     validation:
       target: unidemoire.data.moire.MoirePattern
       params:
-        dataset_path: "/inspurfs/group/mayuexin/yangzemin/data/captured_data"
+        dataset_path: # Please set the path to your moire pattern dataset
         resolution: 768
 
 lightning:
