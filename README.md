@@ -2,7 +2,7 @@
 
 <center><a href="https://yizhifengyeyzm.github.io/">Zemin Yang</a><sup>1</sup>, <a href="https://yujingsun.github.io/">Yujing Sun</a><sup>2</sup>, Xidong Peng<sup>1</sup>, <a href="https://www.cs.hku.hk/index.php/people/academic-staff/smyiu/">Siu Ming Yiu</a><sup>2</sup>, <a href="https://yuexinma.me/">Yuexin Ma</a><sup>1</sup></center>
 
-### [Project Page](https://yizhifengyeyzm.github.io/UniDemoire-page/) | [Paper](https://arxiv.org/abs/2502.06324) | [Dataset](https://pan.baidu.com/s/1YI4NO5xyC8oK3ZOFHpTa1w?pwd=sthx) 
+### [Project Page](https://yizhifengyeyzm.github.io/UniDemoire-page/) | [Paper](https://arxiv.org/abs/2502.06324) | [Dataset](https://drive.google.com/drive/folders/1k48jcgJLMUB0_42H-x1VYl67NP56zel8?usp=drive_link) 
 
 ***
 
@@ -18,8 +18,8 @@ Hence, to tackle these challenges, we introduce a universal solution, **UniDemoi
 
 - [x] Release training code
 - [x] Release testing code
-- [ ] Release dataset
-- [ ] Release pre-trained models
+- [x] Release dataset
+- [x] Release pre-trained models
 
 ## 🛠️ Enviroment
 The entire UniDemoiré framework is built on the Latent Diffusion Model and requires Python 3.8 and PyTorch-Lightning 1.4.2.
@@ -47,7 +47,7 @@ pip install pillow==9.5.0
 
 We provide the captured 4K moiré pattern dataset, the sampled moiré pattern dataset, the MHRNID dataset, and the pre-trained models on both Moiré Pattern Generator and Moiré Image Synthesis stages, which can be downloaded through the following links:
 
-**\[[Baidu Drive](https://pan.baidu.com/s/1YI4NO5xyC8oK3ZOFHpTa1w?pwd=sthx)\]** | **\[Google Drive (To be uploaded)\]**
+**\[[Baidu Drive](https://pan.baidu.com/s/1YI4NO5xyC8oK3ZOFHpTa1w?pwd=sthx)\]** | **\[[Google Drive](https://drive.google.com/drive/folders/1k48jcgJLMUB0_42H-x1VYl67NP56zel8?usp=drive_link)\]**
 
 
 ## 🚀 Getting Started
